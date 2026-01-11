@@ -1,0 +1,54 @@
+.methodology-step {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.step-number {
+  font-family: var(--font-heading);
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--bg-lightest-navy);
+  opacity: 0.1;
+  line-height: 1;
+  margin-right: 20px;
+}
+
+.step-line {
+  height: 1px;
+  background: var(--accent);
+  flex-grow: 1;
+  max-width: 100px;
+  opacity: 0.5;
+}
+
+.step-title {
+  font-size: 24px;
+  color: var(--text-lightest-slate);
+  margin-bottom: 12px;
+}
+
+.step-content {
+  max-width: 500px;
+}
+
+@media (min-width: 768px) {
+  .methodology-steps {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .methodology-step {
+    flex: 1;
+  }
+
+  .step-number {
+    font-size: 80px;
+  }
+}
