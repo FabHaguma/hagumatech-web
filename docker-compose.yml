@@ -1,0 +1,13 @@
+services:
+  hagumatech-web:
+    build: .
+    container_name: hagumatech-web
+    restart: unless-stopped
+    networks:
+      - caddy_network
+    environment:
+      - NODE_ENV=production
+
+networks:
+  caddy_network:
+    external: true

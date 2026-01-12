@@ -64,4 +64,4 @@ Trusted by leaders in International Development NGOs, Regional Microfinance Inst
 - **Location:** Rwanda  
 - **Phone:** +250 786072607  
 - **Email:** infotech@haguma.com  
-- **Website:** https://tech.haguma.com
+- **Website:** https://www.tech.haguma.com
