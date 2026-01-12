@@ -29,10 +29,10 @@ const Footer = () => {
             <MapPin size={18} className="highlight" />
             <span>Kigali, Rwanda</span>
           </div>
-          <div className="info-item">
+          {/* <div className="info-item">
             <ExternalLink size={18} className="highlight" />
             <a href="https://tech.haguma.com" target="_blank" rel="noopener noreferrer">tech.haguma.com</a>
-          </div>
+          </div> */}
         </div>
 
         <div className="footer-bottom">
