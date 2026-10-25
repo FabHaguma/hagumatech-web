@@ -1,46 +1,15 @@
-import React from 'react';
-import { Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
+import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
+import Brand from './Brand';
 import './Footer.css';
 
-const Footer = () => {
+export default function Footer() {
   return (
     <footer id="contact" className="footer">
-      <div className="container footer-container">
-        <div className="footer-content fade-in">
-          <h2 className="footer-title">Let's Build Something Great.</h2>
-          <p className="footer-subtitle">
-            Searching for a reliable technology partner? Let's discuss how we can help your organization grow.
-          </p>
-          <a href="mailto:infotech@haguma.com" className="btn btn-primary big-btn contact-btn">
-            Get In Touch
-          </a>
-        </div>
-
-        <div className="footer-info">
-          <div className="info-item">
-            <Mail size={18} className="highlight" />
-            <a href="mailto:infotech@haguma.com">infotech@haguma.com</a>
-          </div>
-          <div className="info-item">
-            <Phone size={18} className="highlight" />
-            <span>+250 786072607</span>
-          </div>
-          <div className="info-item">
-            <MapPin size={18} className="highlight" />
-            <span>Kigali, Rwanda</span>
-          </div>
-          {/* <div className="info-item">
-            <ExternalLink size={18} className="highlight" />
-            <a href="https://tech.haguma.com" target="_blank" rel="noopener noreferrer">tech.haguma.com</a>
-          </div> */}
-        </div>
-
-        <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} HagumaTech. All rights reserved.</p>
-        </div>
+      <div className="container">
+        <div className="contact-top"><div><p className="eyebrow">Your next chapter starts here</p><h2>Have something<br />in mind? <span>Let’s build it.</span></h2><p>A website, a platform, or a challenge you’re still figuring out.<br className="desktop-break" /> Tell us where you want to go.</p></div><a className="contact-circle" href="mailto:infotech@haguma.com" aria-label="Email HagumaTech to start a conversation"><ArrowUpRight size={45} strokeWidth={1.3} /></a></div>
+        <div className="contact-details"><a href="mailto:infotech@haguma.com"><Mail size={19} />infotech@haguma.com <ArrowUpRight size={17} /></a><a href="tel:+250786072607"><Phone size={18} />+250 786 072 607</a><span><MapPin size={18} />Kigali, Rwanda</span></div>
       </div>
+      <div className="footer-base"><div className="container"><div className="footer-navigation"><p>© {new Date().getFullYear()} HagumaTech. All rights reserved.</p><nav aria-label="Footer navigation"><a href="#webyacu">Webyacu</a><a href="#services">Expertise</a><a href="#why-us">About us</a><a href="#hero">Back to top ↑</a></nav></div></div></div>
     </footer>
   );
-};
-
-export default Footer;
+}

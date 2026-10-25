@@ -1,32 +1,34 @@
-import React from 'react';
+import { ArrowDown, ArrowUpRight, Blocks, Globe2, MoveUpRight, ShieldCheck } from 'lucide-react';
 import './Hero.css';
 
-const Hero = () => {
+export default function Hero() {
   return (
-    <section id="hero" className="hero-section">
-      <div className="container hero-container">
-        <div className="hero-content">
-          <h2 className="hero-subtitle highlight fade-in delay-1">Institutional Innovation</h2>
-          <h1 className="hero-title fade-in delay-2">
-            Practical Digital Solutions <br />
-            For <span className="text-gradient">Real Impact.</span>
-          </h1>
-          <p className="hero-description fade-in delay-3">
-            We build secure, scalable, and reliable digital platforms for Government, NGOs, and Fintech organizations in Rwanda.
-          </p>
-          <div className="hero-cta fade-in delay-4">
-            <a href="#contact" className="btn btn-primary big-btn">Work With Us</a>
-            <a href="#services" className="btn big-btn">Our Services</a>
+    <>
+      <section id="hero" className="hero-section">
+        <div className="container hero-grid">
+          <div className="hero-copy">
+            <p className="eyebrow"><span className="status-dot" /> Built in Rwanda. Built for impact.</p>
+            <h1>Good technology.<br />Real-world <span className="impact-word">impact<svg viewBox="0 0 310 15" aria-hidden="true"><path d="M3 10 Q150 -3 307 8" /></svg></span>.</h1>
+            <p className="hero-description">From your first website to the systems that run your organization. We turn ambitious ideas into practical digital experiences.</p>
+            <div className="hero-actions">
+              <a href="#contact" className="button">Build with us <ArrowUpRight size={19} /></a>
+              <a href="#webyacu" className="text-link">Meet Webyacu <ArrowUpRight size={18} /></a>
+            </div>
+            <div className="hero-note"><span className="note-line" /> Your technology partner, from idea to what’s next.</div>
+          </div>
+          <div className="ecosystem" role="img" aria-label="HagumaTech connects websites through Webyacu, custom digital systems, and ongoing support.">
+            <div className="ecosystem-top"><span>IDEAS INTO POSSIBILITY</span><MoveUpRight size={19} /></div>
+            <div className="orbit orbit-one" /><div className="orbit orbit-two" />
+            <div className="orbit-center"><span>H<span>t</span></span><small>HAGUMATECH</small></div>
+            <div className="ecosystem-node node-web"><div className="node-icon"><Globe2 size={21} /></div><div><small>GET ONLINE</small><strong>Webyacu<span>↗</span></strong><p>Your place on the web.</p></div></div>
+            <div className="ecosystem-node node-systems"><div className="node-icon"><Blocks size={21} /></div><div><small>WORK SMARTER</small><strong>Digital systems</strong><p>Built around your work.</p></div></div>
+            <div className="ecosystem-node node-support"><ShieldCheck size={19} /><span>Built to grow with you</span><span className="status-dot" /></div>
+            <div className="ecosystem-bottom"><span>ONE PARTNER. MORE POSSIBILITIES.</span><span>01 — ∞</span></div>
           </div>
         </div>
-        <div className="hero-visual fade-in delay-4">
-          <div className="grid-pattern"></div>
-          <div className="floating-shape shape-1"></div>
-          <div className="floating-shape shape-2"></div>
-        </div>
-      </div>
-    </section>
+        <div className="container hero-bottom"><span>Technology for people moving things forward.</span><a href="#webyacu" aria-label="Explore our services"><ArrowDown size={17} /></a></div>
+      </section>
+      <div className="sectors-strip"><div className="container sectors-content"><span className="sectors-label">BUILT AROUND YOUR WORLD</span><span>Businesses</span><span>NGOs & nonprofits</span><span>Public institutions</span><span>Fintech</span></div></div>
+    </>
   );
-};
-
-export default Hero;
+}

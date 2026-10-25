@@ -1,52 +1,29 @@
-import React from 'react';
-import { CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, Compass, Fingerprint, Sprout } from 'lucide-react';
 import './WhyUs.css';
 
-const WhyUs = () => {
-  const reasons = [
-    {
-      title: "Trusted Technologies",
-      desc: "Stable and proven tools tailored for long-term reliability in critical sectors."
-    },
-    {
-      title: "Impact-Focused",
-      desc: "Solutions designed specifically for social, public, and financial impact."
-    },
-    {
-      title: "Scalable by Design",
-      desc: "Systems architecture that grows seamlessly with your organization."
-    },
-    {
-      title: "Local Expertise",
-      desc: "Strong understanding of regional context and institutional needs in Rwanda."
-    }
-  ];
+const principles = [
+  { icon: Compass, title: 'Context comes first.', text: 'Based in Rwanda, we take the time to understand your people, your environment, and the problem worth solving.' },
+  { icon: Fingerprint, title: 'Your needs shape the solution.', text: 'From a business website to an institutional platform, we choose proven technology that fits your work.' },
+  { icon: Sprout, title: 'Think beyond launch.', text: 'Maintainable systems, ongoing care, and room to grow. We build with your next chapter in mind.' },
+];
 
+export default function WhyUs() {
   return (
-    <section id="why-us" className="why-us-section">
-      <div className="container">
-        <div className="why-us-content">
-          <div className="why-us-text fade-in">
-             <h2 className="section-title"><span className="highlight">03.</span> Why HagumaTech</h2>
-             <p className="lead-text">
-               We don't just write code; we build the digital infrastructure for Rwanda's future.
-             </p>
-          </div>
-          <div className="why-us-grid">
-            {reasons.map((reason, index) => (
-              <div className="reason-item fade-in" key={index}>
-                <CheckCircle2 className="reason-icon" size={24} />
-                <div>
-                  <h4 className="reason-title">{reason.title}</h4>
-                  <p className="reason-desc">{reason.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+    <section id="why-us" className="why-us-section section-space">
+      <div className="container about-grid">
+        <div><p className="eyebrow">02 / The people behind the technology</p><h2>Rooted here.<br />Thinking ahead.</h2><p className="about-description">HagumaTech is a Rwanda-based technology company helping businesses and institutions put digital tools to work. We care about what technology makes possible for the people using it.</p><a href="#contact" className="text-link">Get to know your next partner <ArrowUpRight size={18} /></a><div className="about-location"><span className="location-cross">+</span> Kigali, Rwanda <span>Connecting ideas to impact.</span></div></div>
+        <div className="principles">
+          {principles.map((principle) => {
+            const { icon: Icon, title, text } = principle;
+            return (
+              <article className="principle" key={title}>
+                <Icon size={25} strokeWidth={1.5} />
+                <div><h3>{title}</h3><p>{text}</p></div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
   );
-};
-
-export default WhyUs;
+}

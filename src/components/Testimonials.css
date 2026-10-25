@@ -1,58 +1,10 @@
-.testimonials-section {
-    padding-bottom: 120px;
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.testimonial-card {
-    background-color: var(--bg-light-navy);
-    padding: 40px 30px;
-    border-radius: 4px;
-    position: relative;
-    transition: var(--transition);
-    border: 1px solid transparent;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent);
-    background-color: rgba(17, 34, 64, 0.8);
-}
-
-.quote-icon {
-    color: var(--accent);
-    margin-bottom: 20px;
-    opacity: 0.5;
-}
-
-.testimonial-text {
-    font-size: 16px;
-    color: var(--text-light-slate);
-    line-height: 1.7;
-    margin-bottom: 30px;
-    font-style: italic;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    border-top: 1px solid var(--bg-lightest-navy);
-    padding-top: 20px;
-}
-
-.author-name {
-    color: var(--white);
-    font-size: 16px;
-    margin-bottom: 4px;
-}
-
-.author-org {
-    color: var(--accent);
-    font-size: 13px;
-    font-family: var(--font-heading);
-    letter-spacing: 0.5px;
-}
+.testimonials-section { border-top: 1px solid var(--line); padding-top: 76px; }
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px; margin-top: 43px; }
+.testimonial { display: flex; flex-direction: column; }
+.testimonial > svg { color: #5e9a7f; margin-bottom: 20px; }
+.testimonial blockquote { font-size: 1rem; line-height: 2; margin-bottom: 25px; }
+.testimonial figcaption { border-top: 1px solid var(--line); padding-top: 19px; margin-top: auto; }
+.testimonial figcaption strong { display: block; font-size: 0.9375rem; font-weight: 500; }
+.testimonial figcaption span { display: block; font-size: 0.875rem; color: var(--muted); margin-top: 4px; }
+@media (max-width: 900px) { .testimonials-grid { gap: 25px; } .testimonial blockquote { font-size: 1rem; } }
+@media (max-width: 700px) { .testimonials-section { padding-top: 60px; } .testimonials-grid { grid-template-columns: 1fr; gap: 35px; margin-top: 33px; } .testimonial blockquote { font-size: 1rem; margin-bottom: 18px; } .testimonial > svg { margin-bottom: 15px; } }

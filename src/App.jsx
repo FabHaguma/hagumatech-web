@@ -1,26 +1,26 @@
-import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Webyacu from './components/Webyacu';
 import Services from './components/Services';
 import Methodology from './components/Methodology';
 import WhyUs from './components/WhyUs';
-import Stats from './components/Stats';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 
-function App() {
+export default function App() {
   return (
-    <div className="app">
+    <>
+      <a className="skip-link" href="#main">Skip to content</a>
       <Navbar />
-      <Hero />
-      <Services />
-      <Methodology />
-      <WhyUs />
-      <Testimonials />
-      <Stats />
+      <main id="main" tabIndex={-1}>
+        <Hero />
+        <Webyacu />
+        <Services />
+        <WhyUs />
+        <Methodology />
+        <Testimonials />
+      </main>
       <Footer />
-    </div>
+    </>
   );
 }
-
-export default App;

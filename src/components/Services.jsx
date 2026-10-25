@@ -1,68 +1,34 @@
-import React from 'react';
-import { Layout, Server, Database, Shield, Smartphone, BarChart } from 'lucide-react';
+import { ArrowUpRight, Blocks, ChartNoAxesCombined, Code2, Database, ShieldCheck, Smartphone } from 'lucide-react';
 import './Services.css';
 
-const Services = () => {
-  const services = [
-    {
-      icon: <Layout size={40} />,
-      title: "Digital Systems & Platforms",
-      description: "Custom digital systems for government and public service management, NGO program reporting, and fintech web applications.",
-      tags: ["Public Service", "NGO Platforms", "Fintech"]
-    },
-    {
-      icon: <Server size={40} />,
-      title: "Web & Backend Development",
-      description: "Secure, scalable web applications and business process automation systems with robust API development and integrations.",
-      tags: ["Automation", "APIs", "Scalability"]
-    },
-    {
-      icon: <Database size={40} />,
-      title: "Content Systems",
-      description: "Data-driven content management solutions, information portals, and custom WordPress websites designed for clarity.",
-      tags: ["CMS", "Portals", "Dashboards"]
-    },
-    {
-      icon: <Shield size={40} />,
-      title: "Deployment & Support",
-      description: "Cloud-ready containerized deployments, ongoing maintenance, security updates, and dedicated technical support.",
-      tags: ["Cloud", "Security", "Maintenance"]
-    },
-    {
-      icon: <Smartphone size={40} />,
-      title: "Mobile Solutions",
-      description: "Native and cross-platform mobile applications for citizen engagement, field data collection, and financial services.",
-      tags: ["iOS & Android", "Field Data", "App Dev"]
-    },
-    {
-      icon: <BarChart size={40} />,
-      title: "Data Analytics & BI",
-      description: "Transforming raw data into actionable insights through custom dashboards, automated reporting tools, and visual analytics.",
-      tags: ["Analytics", "Visualization", "Insights"]
-    }
-  ];
+const services = [
+  { icon: Blocks, title: 'Digital systems & platforms', description: 'Purpose-built systems for public services, NGO programs, and financial operations.', tags: 'Public services / NGO platforms / Fintech' },
+  { icon: Code2, title: 'Web applications & APIs', description: 'Connect your tools, automate everyday processes, and turn complex workflows into simple experiences.', tags: 'Applications / Integrations / Automation' },
+  { icon: Database, title: 'Content & information systems', description: 'Give your content a clear home with manageable websites, information portals, and dashboards.', tags: 'CMS / WordPress / Portals' },
+  { icon: Smartphone, title: 'Mobile solutions', description: 'Bring services closer to people with mobile apps for engagement, fieldwork, and data collection.', tags: 'Mobile apps / Field tools / Engagement' },
+  { icon: ChartNoAxesCombined, title: 'Data analytics & reporting', description: 'Make your data useful with clear dashboards, visual analytics, and reporting tools.', tags: 'Dashboards / Reporting / Insights' },
+  { icon: ShieldCheck, title: 'Deployment & ongoing care', description: 'Keep your technology working with cloud deployment, maintenance, security updates, and support.', tags: 'Hosting / Maintenance / Support' },
+];
 
+export default function Services() {
   return (
-    <section id="services" className="services-section">
+    <section id="services" className="services-section section-space">
       <div className="container">
-        <h2 className="section-title fade-in"><span className="highlight">01.</span> What We Do</h2>
+        <div className="section-heading"><div><p className="eyebrow">01 / Our expertise</p><h2>Beyond a website.<br />Built for the way you work.</h2></div><p>When your needs go deeper, we build the technology behind your operations. Practical solutions, shaped around real challenges.</p></div>
         <div className="services-grid">
-          {services.map((service, index) => (
-            <div className="service-card fade-in" style={{ animationDelay: `${index * 0.1}s` }} key={index}>
-              <div className="service-icon">{service.icon}</div>
-              <h3 className="service-title">{service.title}</h3>
-              <p className="service-description">{service.description}</p>
-              <ul className="service-tags">
-                {service.tags.map((tag, i) => (
-                  <li key={i}>{tag}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {services.map((service, index) => {
+            const { icon: Icon, title, description, tags } = service;
+            return (
+            <article className="service-card" key={title}>
+              <div className="service-top"><Icon size={27} strokeWidth={1.5} /><span>0{index + 1}</span></div>
+              <h3><a href={`mailto:infotech@haguma.com?subject=${encodeURIComponent(`Project enquiry: ${title}`)}`}>{title}<ArrowUpRight size={20} /></a></h3>
+              <p>{description}</p><span className="service-tags">{tags}</span>
+            </article>
+            );
+          })}
         </div>
+        <div className="services-bottom"><span>Not sure where to start? That’s what the first conversation is for.</span><a href="#contact" className="text-link">Let’s find your solution <ArrowUpRight size={18} /></a></div>
       </div>
     </section>
   );
-};
-
-export default Services;
+}
