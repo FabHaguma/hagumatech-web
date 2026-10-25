@@ -32,6 +32,8 @@ npm run preview
 
 The production output is `dist/`. Local development and verification do not require Docker. The existing Docker/Nginx production configuration is retained.
 
+Production builds explicitly load `vite.config.js` so missing React configuration fails the build rather than producing a broken page. Keep both `vite.config.js` and `package-lock.json` in the Docker build context; the image installs locked dependencies with `npm ci`.
+
 ## Page structure
 
 - Hero: HagumaTech’s positioning and the relationship between websites, systems, and support.

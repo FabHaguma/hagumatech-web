@@ -1,3 +1,4 @@
+# Keep vite.config.js and package-lock.json in the production build context.
 node_modules
 dist
 .git
@@ -6,5 +7,3 @@ README.md
 Dockerfile
 .dockerignore
 eslint.config.js
-vite.config.js
-package-lock.json
